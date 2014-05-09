@@ -1,0 +1,115 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class RPS {
+    public static void main(String[] args) {
+	
+        Random rndNumbers = new Random();
+        int rndNumber = 0;
+ 
+        Scanner in = new Scanner(System.in);
+       
+        int cont = 1;
+        int pl1 = 0;
+        int comp = 0;
+        
+        
+        while (cont == 1){
+        
+            
+        System.out.println("Select Your Weapon: ");
+        System.out.println(" 1 - Rock ");
+        System.out.println(" 2 - Paper ");
+        System.out.println(" 3 - Scissors ");
+        System.out.println(" ");
+        
+        int rps = in.nextInt();
+        rndNumber = rndNumbers.nextInt(3)+1;  
+
+        
+        
+       switch (rps){
+           
+            case 1 : rps = 1; //piedra
+            
+                System.out.println(" ");    
+            
+                    System.out.print("Rock");
+                
+                 if (rndNumber == 2){
+                            System.out.println(" vs Paper");
+                            comp++ ;
+                 }if (rndNumber == 3){
+                            System.out.println(" vs Scissors");
+                            pl1++;
+                 }else if (rndNumber == 1){
+                   
+                  System.out.println(" vs Rock");
+                 }
+                        break;
+       
+              case 2 : rps = 2; //papel
+            
+                System.out.println(" ");    
+            
+                    System.out.print("Paper");
+                
+                 if (rndNumber == 1){
+                            System.out.println(" vs Rock");
+                            pl1++ ;
+                 }if (rndNumber == 3){
+                            System.out.println(" vs Scissors");
+                            comp++;
+                 }else if (rndNumber == 2){
+                   
+                  System.out.println(" vs Paper");
+                 }
+                        break;
+                  
+               case 3 : rps = 3; //tijera
+            
+                System.out.println(" ");    
+            
+                    System.out.print("Scissors");
+                
+                 if (rndNumber == 2){
+                            System.out.println(" vs Paper");
+                            pl1++ ;
+                 }if (rndNumber == 1){
+                            System.out.println(" vs Rock");
+                            comp++;
+                 }else if (rndNumber == 3){
+                   
+                  System.out.println(" vs Scissors");                            
+                 }
+                        break;
+       
+        } 
+       int con;
+               
+       System.out.println( " Player " + pl1 + " vs " + " Computer " + comp);
+               
+            System.out.println(" ");
+            System.out.println(" Rematch? ");
+            System.out.println(" Yes = 0 ");
+            System.out.println(" No = 1 ");
+            con = in.nextInt();
+            
+            cont = cont + con;
+            
+            if (con == 1){
+                if (pl1 > comp){
+                    System.out.println(" ");
+            System.out.println("Congratulations! You have Won!");
+                } else if (comp > pl1){
+                    System.out.println(" ");
+            System.out.println("You Lose...");
+                } else if (pl1 == comp){
+                    System.out.println(" ");
+            System.out.println("Draw!");
+                }
+            }
+}
+
+    }
+}
